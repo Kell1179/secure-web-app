@@ -4,7 +4,9 @@ Projek ini menggunakan NextJS, sehingga lakukan
 
 **Catatan :**
 1. Projek ini secara default merupakan simulasi dari Docker Compose
-2. Untuk mensimulasikan Docker Stack/ Swarm lakukan langkah di bawah ini :
+2. Jika tidak bisa, mohon tambahkan .env pada root dengan encoding UTF-8 yang berisi
+   <pre><code>REDIS_PASSWORD=mySuperSecret123</code></pre>
+3. Untuk mensimulasikan Docker Stack/ Swarm lakukan langkah di bawah ini :
     a. redis_password.txt dipindah ke folder secret dan diubah menjadi redis_password saja
     b. Ubah docker-compose.yml menjadi seperti di bawah
    
