@@ -1,13 +1,14 @@
 Projek ini menggunakan NextJS, sehingga lakukan
 
-npm install
+<pre><code>npm install </code></pre>
 
 **Catatan :**
 1. Projek ini secara default merupakan simulasi dari Docker Compose
 2. Untuk mensimulasikan Docker Stack/ Swarm lakukan langkah di bawah ini :
     a. redis_password.txt dipindah ke folder secret dan diubah menjadi redis_password saja
     b. Ubah docker-compose.yml menjadi seperti di bawah
-
+   
+<pre><code>
 services:
   redis:
     image: redis:7
@@ -47,3 +48,4 @@ secrets:
 networks:
   app-net:
     driver: overlay
+</code></pre>
