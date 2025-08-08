@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:7
+    command: ["sh", "-c", "redis-server --requirepass $$(cat /run/secrets/redis_password)"]
+    ports:
+      - "6379:6379"
+    networks:
+      - app-net
+    secrets:
+      - redis_password  # <== Tambahkan ini!
+
+  web:
+    image: my-app-image
+    ports:
+      - "3000:3000"
+    networks:
+      - app-net
+    secrets:
+      - redis_password  # <== Tambahkan ini juga!
+    environment:
+      - REDIS_PASSWORD_FILE=/run/secrets/redis_password
+
+secrets:
+  redis_password:
+    file: ./redis_password.txt
+
+networks:
+  app-net:
